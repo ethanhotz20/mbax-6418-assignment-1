@@ -1,0 +1,26 @@
+{
+  "source_url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_2023/raw/review_categories/Gift_Cards.jsonl.gz",
+  "source_file": "Gift_Cards.jsonl.gz",
+  "sha256": "e03a258ebd7b1e2591b09862aab65d3dcde9c300744d800aa1fbaf374b7c2340",
+  "compressed_bytes": 12292543,
+  "python": "3.11.16",
+  "platform": "Windows-10-10.0.26100-SP0",
+  "random_seed": 6418,
+  "sampling": "None; all records profiled",
+  "classification_performed": false,
+  "download": {
+    "url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_2023/raw/review_categories/Gift_Cards.jsonl.gz",
+    "resolved_url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_2023/raw/review_categories/Gift_Cards.jsonl.gz",
+    "downloaded_at_utc": "2026-09-14T20:14:43.578714+00:00",
+    "headers": {
+      "Date": "Mon, 14 Sep 2026 20:14:38 GMT",
+      "Content-Type": "application/gzip",
+      "Content-Length": "12292543",
+      "Connection": "close",
+      "Last-Modified": "Thu, 16 Jan 2025 23:28:28 GMT",
+      "ETag": "\"bb91bf-62bdb26c85d4d\"",
+      "Accept-Ranges": "bytes",
+      "Strict-Transport-Security": "max-age=15768000"
+    }
+  }
+}

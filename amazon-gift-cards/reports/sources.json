@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://amazon-reviews-2023.github.io",
+      "title": "",
+      "accessed": "2026-09-14"
+    },
+    {
+      "id": 2,
+      "url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_2023/raw/review_categories/Gift_Cards.jsonl.gz",
+      "title": "",
+      "accessed": "2026-09-14"
+    }
+  ]
+}

@@ -1,0 +1,3 @@
+# NRC emotion scoring dependency. Live inference dependencies are in
+# requirements-inference.txt because Hermes supplies the authenticated client.
+nrclex==4.1.0

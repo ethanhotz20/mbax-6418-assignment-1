@@ -1,0 +1,58 @@
+[
+  {
+    "id": "joy",
+    "model_input": {
+      "title": "Wonderful gift",
+      "text": "This made my sister smile and I am delighted."
+    }
+  },
+  {
+    "id": "anger",
+    "model_input": {
+      "title": "Infuriating failure",
+      "text": "The card would not activate and support kept blaming me."
+    }
+  },
+  {
+    "id": "anticipation",
+    "model_input": {
+      "title": "Excited to give it",
+      "text": "I cannot wait to see my friend open this present."
+    }
+  },
+  {
+    "id": "disgust",
+    "model_input": {
+      "title": "Completely appalling",
+      "text": "The damaged presentation was revolting and unacceptable."
+    }
+  },
+  {
+    "id": "fear",
+    "model_input": {
+      "title": "Worried about the balance",
+      "text": "I am anxious that someone may have stolen the funds."
+    }
+  },
+  {
+    "id": "sadness",
+    "model_input": {
+      "title": "A disappointing gift",
+      "text": "I regret buying it and feel unhappy that it failed."
+    }
+  },
+  {
+    "id": "surprise",
+    "model_input": {
+      "title": "Unexpectedly quick",
+      "text": "I was astonished when it arrived almost immediately."
+    }
+  },
+  {
+    "id": "trust",
+    "model_input": {
+      "title": "Dependable and easy",
+      "text": "I feel confident using this reliable gift option."
+    }
+  }
+]

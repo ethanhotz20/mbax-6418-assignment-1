@@ -1,0 +1,562 @@
+{
+  "mode": "live",
+  "planned": 8,
+  "api_calls": 8,
+  "parsed_valid": 8,
+  "sentiment_matches": 8,
+  "emotion_matches": 8,
+  "results": [
+    {
+      "id": "joy",
+      "sentiment": "POSITIVE",
+      "expected_sentiment": "POSITIVE",
+      "sentiment_match": true,
+      "emotion": "JOY",
+      "expected_emotion": "JOY",
+      "emotion_match": true,
+      "response_id": "resp_03124f4688411248016aa86eafed8087d0895a5943412657f9",
+      "returned_model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": 425,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 22,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 447,
+        "attribution": {
+          "items": {
+            "msg_03124f4688411248016aa86eaff3b487d0be5fc44664ec75be": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "content": [
+                {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 26,
+                  "output_tokens": 0
+                }
+              ],
+              "input_tokens": 26,
+              "output_tokens": 0
+            },
+            "msg_03124f4688411248016aa86eb0cf4487d08f7dc5b7f8e15813": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "content": [
+                {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 22
+                }
+              ],
+              "input_tokens": 2,
+              "output_tokens": 22
+            }
+          },
+          "request_fields": {
+            "text.format": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "input_tokens": 70,
+              "output_tokens": 0
+            },
+            "instructions": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "input_tokens": 327,
+              "output_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "anger",
+      "sentiment": "NEGATIVE",
+      "expected_sentiment": "NEGATIVE",
+      "sentiment_match": true,
+      "emotion": "ANGER",
+      "expected_emotion": "ANGER",
+      "emotion_match": true,
+      "response_id": "resp_07a73582d4e303b4016aa86eb1a0c487d08b04b619ce86e180",
+      "returned_model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": 428,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 22,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 450,
+        "attribution": {
+          "items": {
+            "msg_07a73582d4e303b4016aa86eb1a66487d0bf87cbf008ab2179": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "content": [
+                {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 29,
+                  "output_tokens": 0
+                }
+              ],
+              "input_tokens": 29,
+              "output_tokens": 0
+            },
+            "msg_07a73582d4e303b4016aa86eb30ed087d084c330a25b341b45": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "content": [
+                {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 22
+                }
+              ],
+              "input_tokens": 2,
+              "output_tokens": 22
+            }
+          },
+          "request_fields": {
+            "text.format": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "input_tokens": 70,
+              "output_tokens": 0
+            },
+            "instructions": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "input_tokens": 327,
+              "output_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "anticipation",
+      "sentiment": "POSITIVE",
+      "expected_sentiment": "POSITIVE",
+      "sentiment_match": true,
+      "emotion": "ANTICIPATION",
+      "expected_emotion": "ANTICIPATION",
+      "emotion_match": true,
+      "response_id": "resp_0f39e116d1992a0c016aa86eb3ba8887d0a478d604ef6de53a",
+      "returned_model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": 429,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 25,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 454,
+        "attribution": {
+          "items": {
+            "msg_0f39e116d1992a0c016aa86eb3c0e087d09aa81f8ed5af5f65": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "content": [
+                {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 30,
+                  "output_tokens": 0
+                }
+              ],
+              "input_tokens": 30,
+              "output_tokens": 0
+            },
+            "msg_0f39e116d1992a0c016aa86eb4970c87d08f0be9a1706a94ab": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "content": [
+                {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 25
+                }
+              ],
+              "input_tokens": 2,
+              "output_tokens": 25
+            }
+          },
+          "request_fields": {
+            "text.format": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "input_tokens": 70,
+              "output_tokens": 0
+            },
+            "instructions": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "input_tokens": 327,
+              "output_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "disgust",
+      "sentiment": "NEGATIVE",
+      "expected_sentiment": "NEGATIVE",
+      "sentiment_match": true,
+      "emotion": "DISGUST",
+      "expected_emotion": "DISGUST",
+      "emotion_match": true,
+      "response_id": "resp_06bc2c200467e748016aa86eb575f887d0b48003a416f6c22b",
+      "returned_model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": 426,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 24,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 450,
+        "attribution": {
+          "items": {
+            "msg_06bc2c200467e748016aa86eb581b087d0a392c7df82d3e857": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "content": [
+                {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 27,
+                  "output_tokens": 0
+                }
+              ],
+              "input_tokens": 27,
+              "output_tokens": 0
+            },
+            "msg_06bc2c200467e748016aa86eb88f1087d0aca4235912b8f8aa": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "content": [
+                {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 24
+                }
+              ],
+              "input_tokens": 2,
+              "output_tokens": 24
+            }
+          },
+          "request_fields": {
+            "text.format": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "input_tokens": 70,
+              "output_tokens": 0
+            },
+            "instructions": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "input_tokens": 327,
+              "output_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "fear",
+      "sentiment": "NEGATIVE",
+      "expected_sentiment": "NEGATIVE",
+      "sentiment_match": true,
+      "emotion": "FEAR",
+      "expected_emotion": "FEAR",
+      "emotion_match": true,
+      "response_id": "resp_05e9ce82fceddb74016aa86eb9842087d0bea1dc743c322af4",
+      "returned_model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": 430,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 23,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 453,
+        "attribution": {
+          "items": {
+            "msg_05e9ce82fceddb74016aa86eb989e887d08b7446165e16c61c": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "content": [
+                {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 31,
+                  "output_tokens": 0
+                }
+              ],
+              "input_tokens": 31,
+              "output_tokens": 0
+            },
+            "msg_05e9ce82fceddb74016aa86ebb4e1087d0807a74f5bdc8d64a": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "content": [
+                {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 23
+                }
+              ],
+              "input_tokens": 2,
+              "output_tokens": 23
+            }
+          },
+          "request_fields": {
+            "text.format": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "input_tokens": 70,
+              "output_tokens": 0
+            },
+            "instructions": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "input_tokens": 327,
+              "output_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "sadness",
+      "sentiment": "NEGATIVE",
+      "expected_sentiment": "NEGATIVE",
+      "sentiment_match": true,
+      "emotion": "SADNESS",
+      "expected_emotion": "SADNESS",
+      "emotion_match": true,
+      "response_id": "resp_0d93b79cab75619d016aa86ebc290487d0a6157b38336b33c3",
+      "returned_model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": 427,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 24,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 451,
+        "attribution": {
+          "items": {
+            "msg_0d93b79cab75619d016aa86ebc2f4487d085d0ca8f59820829": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "content": [
+                {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 28,
+                  "output_tokens": 0
+                }
+              ],
+              "input_tokens": 28,
+              "output_tokens": 0
+            },
+            "msg_0d93b79cab75619d016aa86ebd1f4087d0b7efabcc599de25d": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "content": [
+                {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 24
+                }
+              ],
+              "input_tokens": 2,
+              "output_tokens": 24
+            }
+          },
+          "request_fields": {
+            "text.format": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "input_tokens": 70,
+              "output_tokens": 0
+            },
+            "instructions": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "input_tokens": 327,
+              "output_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "surprise",
+      "sentiment": "POSITIVE",
+      "expected_sentiment": "POSITIVE",
+      "sentiment_match": true,
+      "emotion": "SURPRISE",
+      "expected_emotion": "SURPRISE",
+      "emotion_match": true,
+      "response_id": "resp_04dc1027a0bb9eb8016aa86ebddc4487d0889dcbea03506a66",
+      "returned_model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": 426,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 23,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 449,
+        "attribution": {
+          "items": {
+            "msg_04dc1027a0bb9eb8016aa86ebde49487d0a94ffb4a502f3661": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "content": [
+                {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 27,
+                  "output_tokens": 0
+                }
+              ],
+              "input_tokens": 27,
+              "output_tokens": 0
+            },
+            "msg_04dc1027a0bb9eb8016aa86ebeb85087d0839d10281100170e": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "content": [
+                {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 23
+                }
+              ],
+              "input_tokens": 2,
+              "output_tokens": 23
+            }
+          },
+          "request_fields": {
+            "text.format": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "input_tokens": 70,
+              "output_tokens": 0
+            },
+            "instructions": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "input_tokens": 327,
+              "output_tokens": 0
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "trust",
+      "sentiment": "POSITIVE",
+      "expected_sentiment": "POSITIVE",
+      "sentiment_match": true,
+      "emotion": "TRUST",
+      "expected_emotion": "TRUST",
+      "emotion_match": true,
+      "response_id": "resp_021ec2f81273d50d016aa86ec0247487d0bbcdbde887353f14",
+      "returned_model": "gpt-5.6-sol",
+      "usage": {
+        "input_tokens": 426,
+        "input_tokens_details": {
+          "cached_tokens": 0,
+          "cache_write_tokens": 0
+        },
+        "output_tokens": 23,
+        "output_tokens_details": {
+          "reasoning_tokens": 0
+        },
+        "total_tokens": 449,
+        "attribution": {
+          "items": {
+            "msg_021ec2f81273d50d016aa86ec02fdc87d0be249a8abc1b6d02": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "content": [
+                {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 27,
+                  "output_tokens": 0
+                }
+              ],
+              "input_tokens": 27,
+              "output_tokens": 0
+            },
+            "msg_021ec2f81273d50d016aa86ec1937487d0858b81905966b902": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "content": [
+                {
+                  "cache_write_tokens": 0,
+                  "cached_tokens": 0,
+                  "input_tokens": 2,
+                  "output_tokens": 23
+                }
+              ],
+              "input_tokens": 2,
+              "output_tokens": 23
+            }
+          },
+          "request_fields": {
+            "text.format": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "input_tokens": 70,
+              "output_tokens": 0
+            },
+            "instructions": {
+              "cache_write_tokens": 0,
+              "cached_tokens": 0,
+              "input_tokens": 327,
+              "output_tokens": 0
+            }
+          }
+        }
+      }
+    }
+  ]
+}

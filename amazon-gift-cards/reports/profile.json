@@ -1,0 +1,102 @@
+{
+  "observations": 152410,
+  "columns": [
+    "asin",
+    "helpful_vote",
+    "images",
+    "parent_asin",
+    "rating",
+    "text",
+    "timestamp",
+    "title",
+    "user_id",
+    "verified_purchase"
+  ],
+  "schema": {
+    "asin": {
+      "types": {
+        "str": 152410
+      },
+      "missing": 0,
+      "null": 0
+    },
+    "helpful_vote": {
+      "types": {
+        "int": 152410
+      },
+      "missing": 0,
+      "null": 0
+    },
+    "images": {
+      "types": {
+        "list": 152410
+      },
+      "missing": 0,
+      "null": 0
+    },
+    "parent_asin": {
+      "types": {
+        "str": 152410
+      },
+      "missing": 0,
+      "null": 0
+    },
+    "rating": {
+      "types": {
+        "float": 152410
+      },
+      "missing": 0,
+      "null": 0
+    },
+    "text": {
+      "types": {
+        "str": 152410
+      },
+      "missing": 0,
+      "null": 0
+    },
+    "timestamp": {
+      "types": {
+        "int": 152410
+      },
+      "missing": 0,
+      "null": 0
+    },
+    "title": {
+      "types": {
+        "str": 152410
+      },
+      "missing": 0,
+      "null": 0
+    },
+    "user_id": {
+      "types": {
+        "str": 152410
+      },
+      "missing": 0,
+      "null": 0
+    },
+    "verified_purchase": {
+      "types": {
+        "bool": 152410
+      },
+      "missing": 0,
+      "null": 0
+    }
+  },
+  "rating_counts": {
+    "1": 12326,
+    "2": 1873,
+    "3": 3271,
+    "4": 6692,
+    "5": 128248
+  },
+  "invalid_rating_count": 0,
+  "blank_text_count": 49,
+  "blank_lines": 0,
+  "timestamp_range_raw": [
+    1217986106000,
+    1694035641743
+  ],
+  "example_selection": "First five records in source order; not a representative sample"
+}

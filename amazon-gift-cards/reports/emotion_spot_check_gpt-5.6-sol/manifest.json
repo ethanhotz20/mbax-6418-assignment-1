@@ -1,0 +1,30 @@
+{
+  "created_at_utc": "2026-09-14T22:01:15.967127+00:00",
+  "python": "3.11.16",
+  "settings": {
+    "provider": "openai-codex",
+    "base_url": "https://chatgpt.com/backend-api/codex",
+    "api_mode": "codex_responses",
+    "model": "gpt-5.6-sol",
+    "reasoning_effort": "low",
+    "timeout_seconds": 120,
+    "max_retries": 0,
+    "response_format": "strict_json_schema",
+    "temperature": null,
+    "seed": null,
+    "unsupported_settings_note": "Codex omits temperature, seed and max_output_tokens; do not claim deterministic decoding.",
+    "scope": "Synthetic checks and the saved first-100-review sample only."
+  },
+  "sha256": {
+    "prompts\\sentiment_emotion_v1.txt": "98a131b9798256cfdf7a72b8dc95a150ddf5ee048b1f2694743c1b8310f597c3",
+    "config\\emotion.json": "ea6644cb57216bfc961deb1cc1a36ea5a6662d55894c9ec82c7bf81de4f99851",
+    "tests\\fixtures\\emotion_cases.json": "92b91dfe880b99b93e61a28dbe12895362e4c45b9444efa1a5fc66283bcf5742",
+    "src\\gift_cards\\emotion.py": "5039708424dec3f6ee656732461bf675af975ff3c62bc642ea3f4d60f4e30af5",
+    "scripts\\spot_check_emotion.py": "ee8dadc574f9c4a2c61ae41b2d3c88178a8311fa914b084751dda32018b65887"
+  },
+  "raw_dataset_read": false,
+  "conversation_history_sent": false,
+  "openai_version": "2.24.0",
+  "hermes_revision": "1ad89ac018f26a4f21817ebf37bb09f508656d63",
+  "hermes_adapter_sha256": "fa2c0aff55f6b17679ab76b85c42ee5950450ae08cf81bd4bdcbd44e65fce775"
+}

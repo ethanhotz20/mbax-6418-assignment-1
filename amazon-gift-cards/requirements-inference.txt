@@ -1,0 +1,5 @@
+# Optional direct inference SDK, matching the exercised Hermes runtime.
+# Offline tests and ingestion need only Python's standard library.
+# Live OAuth resolution additionally requires an authenticated Hermes installation.
+# Its exact revision and adapter hash are saved in the spot-check manifest.
+openai==2.24.0

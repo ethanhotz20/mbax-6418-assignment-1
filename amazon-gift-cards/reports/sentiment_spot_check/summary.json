@@ -1,0 +1,108 @@
+{
+  "mode": "live",
+  "planned": 14,
+  "api_calls": 14,
+  "parsed_valid": 14,
+  "matched_expected": 14,
+  "rating_invariance_passed": true,
+  "results": [
+    {
+      "id": "positive_clear",
+      "kind": "obvious",
+      "sentiment": "POSITIVE",
+      "expected": "POSITIVE",
+      "matched_expected": true
+    },
+    {
+      "id": "negative_clear",
+      "kind": "obvious",
+      "sentiment": "NEGATIVE",
+      "expected": "NEGATIVE",
+      "matched_expected": true
+    },
+    {
+      "id": "positive_short",
+      "kind": "obvious",
+      "sentiment": "POSITIVE",
+      "expected": "POSITIVE",
+      "matched_expected": true
+    },
+    {
+      "id": "negative_short",
+      "kind": "obvious",
+      "sentiment": "NEGATIVE",
+      "expected": "NEGATIVE",
+      "matched_expected": true
+    },
+    {
+      "id": "delivery_positive",
+      "kind": "obvious",
+      "sentiment": "POSITIVE",
+      "expected": "POSITIVE",
+      "matched_expected": true
+    },
+    {
+      "id": "service_negative",
+      "kind": "obvious",
+      "sentiment": "NEGATIVE",
+      "expected": "NEGATIVE",
+      "matched_expected": true
+    },
+    {
+      "id": "title_conflict_negative",
+      "kind": "edge",
+      "sentiment": "NEGATIVE",
+      "expected": "NEGATIVE",
+      "matched_expected": true
+    },
+    {
+      "id": "title_conflict_positive",
+      "kind": "edge",
+      "sentiment": "POSITIVE",
+      "expected": "POSITIVE",
+      "matched_expected": true
+    },
+    {
+      "id": "sarcasm",
+      "kind": "edge",
+      "sentiment": "NEGATIVE",
+      "expected": "NEGATIVE",
+      "matched_expected": true
+    },
+    {
+      "id": "mixed_negative",
+      "kind": "edge",
+      "sentiment": "NEGATIVE",
+      "expected": "NEGATIVE",
+      "matched_expected": true
+    },
+    {
+      "id": "mixed_positive",
+      "kind": "edge",
+      "sentiment": "POSITIVE",
+      "expected": "POSITIVE",
+      "matched_expected": true
+    },
+    {
+      "id": "angry_but_satisfied",
+      "kind": "edge",
+      "sentiment": "POSITIVE",
+      "expected": "POSITIVE",
+      "matched_expected": true
+    },
+    {
+      "id": "limited_factual",
+      "kind": "tie_break_policy",
+      "sentiment": "NEGATIVE",
+      "expected": "NEGATIVE",
+      "matched_expected": true
+    },
+    {
+      "id": "injection",
+      "kind": "edge",
+      "sentiment": "NEGATIVE",
+      "expected": "NEGATIVE",
+      "matched_expected": true
+    }
+  ]
+}

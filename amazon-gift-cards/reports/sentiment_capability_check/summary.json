@@ -1,0 +1,13 @@
+{
+  "mode": "live",
+  "planned": 1,
+  "api_calls": 1,
+  "parsed_valid": 0,
+  "matched_expected": 0,
+  "rating_invariance_passed": true,
+  "results": [],
+  "error": {
+    "type": "JSONDecodeError",
+    "http_status": null
+  }
+}

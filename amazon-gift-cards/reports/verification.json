@@ -1,0 +1,12 @@
+{
+  "repeat_run_byte_identical": {
+    "profile.json": true,
+    "examples.json": true,
+    "rating_distribution.csv": true,
+    "manifest.json": true
+  },
+  "rating_counts_sum_to_observations": true,
+  "example_count": 5,
+  "tests_passed": 2,
+  "classification_performed": false
+}

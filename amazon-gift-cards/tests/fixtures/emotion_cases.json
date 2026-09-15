@@ -1,0 +1,10 @@
+[
+  {"id":"joy","title":"Wonderful gift","text":"This made my sister smile and I am delighted.","expected_sentiment":"POSITIVE","expected_emotion":"JOY"},
+  {"id":"anger","title":"Infuriating failure","text":"The card would not activate and support kept blaming me.","expected_sentiment":"NEGATIVE","expected_emotion":"ANGER"},
+  {"id":"anticipation","title":"Excited to give it","text":"I cannot wait to see my friend open this present.","expected_sentiment":"POSITIVE","expected_emotion":"ANTICIPATION"},
+  {"id":"disgust","title":"Completely appalling","text":"The damaged presentation was revolting and unacceptable.","expected_sentiment":"NEGATIVE","expected_emotion":"DISGUST"},
+  {"id":"fear","title":"Worried about the balance","text":"I am anxious that someone may have stolen the funds.","expected_sentiment":"NEGATIVE","expected_emotion":"FEAR"},
+  {"id":"sadness","title":"A disappointing gift","text":"I regret buying it and feel unhappy that it failed.","expected_sentiment":"NEGATIVE","expected_emotion":"SADNESS"},
+  {"id":"surprise","title":"Unexpectedly quick","text":"I was astonished when it arrived almost immediately.","expected_sentiment":"POSITIVE","expected_emotion":"SURPRISE"},
+  {"id":"trust","title":"Dependable and easy","text":"I feel confident using this reliable gift option.","expected_sentiment":"POSITIVE","expected_emotion":"TRUST"}
+]

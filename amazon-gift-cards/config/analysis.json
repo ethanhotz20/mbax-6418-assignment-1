@@ -1,0 +1,14 @@
+{
+  "dataset_url": "https://mcauleylab.ucsd.edu/public_datasets/data/amazon_2023/raw/review_categories/Gift_Cards.jsonl.gz",
+  "documentation_url": "https://amazon-reviews-2023.github.io",
+  "random_seed": 6418,
+  "classification_enabled": false,
+  "llm_policy": {
+    "endpoint_source": "Hermes configured OpenAI-compatible endpoint; verify before classification",
+    "model": null,
+    "settings": null,
+    "credentials": "Runtime only; never stored in project",
+    "exclude_fields": ["rating", "verified_purchase", "helpful_vote", "timestamp", "asin", "parent_asin", "user_id", "images"],
+    "rating_mentions_in_title_or_text": "Must define and test redaction policy before inference"
+  }
+}
