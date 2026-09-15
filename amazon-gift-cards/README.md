@@ -1,91 +1,104 @@
-# Amazon Gift Cards: Sentiment and Emotion Analytics
+# Amazon Gift Cards Sentiment and Emotion Analytics
 
-MBAX 6418 graduate analytics project. **Phase 1: ingestion and descriptive profiling only.** No predictions, API calls, or model-derived labels have been produced.
+This MBAX 6418 project evaluates sentiment and primary emotion in the Amazon Reviews 2023 Gift Cards category. The workflow profiles the complete 152,410-review source file, creates a reproducible balanced sample, classifies review text with a rating-blind language model, compares model-assigned emotions with an NRC lexicon baseline, and presents the findings in a self-contained dashboard.
 
-## Sources
+## Business question
 
-- Reviews: https://mcauleylab.ucsd.edu/public_datasets/data/amazon_2023/raw/review_categories/Gift_Cards.jsonl.gz
-- Documentation: https://amazon-reviews-2023.github.io
-- Citation: Hou et al. (2024), *Bridging Language and Items for Retrieval and Recommendation*, arXiv:2403.03952.
+Can a language model infer customer sentiment from review language alone, and does strong overall accuracy hold when positive, neutral, and negative reviews receive equal representation?
 
-Download the original gzip, not a web-extracted Markdown representation: extraction can decode HTML entities or otherwise alter the review text. Review source terms before redistribution; this repository excludes raw data and reviewer-level example exports.
+The model sees only the review title and text. Star ratings are withheld during inference and used afterward to create evaluation labels:
 
-## Structure
+- Ratings 4–5: `POSITIVE`
+- Rating 3: `NEUTRAL`
+- Ratings 1–2: `NEGATIVE`
+
+## Main finding
+
+The original imbalanced sample produced 99.00% accuracy, but that result was misleading because the sample was dominated by positive reviews and did not adequately test performance across all sentiment classes. After balancing the sample, overall accuracy fell to 67.33%, even though the model still achieved 92.00% accuracy for POSITIVE reviews and 98.00% for NEGATIVE reviews. The main weakness was the NEUTRAL class, where accuracy was only 12.00%: 44 of 50 neutral reviews were misclassified, including 34 labeled as NEGATIVE and 10 labeled as POSITIVE. Balanced sampling therefore revealed that the model performs well when sentiment is clearly positive or negative but has substantial difficulty recognizing neutral language, a limitation that the original 99.00% accuracy concealed.
+
+## Balanced three-class results
+
+The experiment uses seed `6418` and samples 50 eligible reviews from each sentiment class after scanning the full dataset.
+
+| Metric | Result |
+|---|---:|
+| Reviews | 150 |
+| Correct predictions | 101 |
+| Incorrect predictions | 49 |
+| Overall accuracy | 67.33% |
+| POSITIVE accuracy | 92.00% |
+| NEUTRAL accuracy | 12.00% |
+| NEGATIVE accuracy | 98.00% |
+
+### Confusion matrix
+
+Rows are rating-derived actual labels; columns are model predictions.
+
+| Actual \ Predicted | POSITIVE | NEUTRAL | NEGATIVE |
+|---|---:|---:|---:|
+| POSITIVE | 46 | 3 | 1 |
+| NEUTRAL | 10 | 6 | 34 |
+| NEGATIVE | 0 | 1 | 49 |
+
+The largest error is `NEUTRAL → NEGATIVE`, which occurred 34 times. Ratings are an evaluation proxy rather than definitive sentiment ground truth, so disagreement does not automatically mean the text-based prediction is unreasonable.
+
+## Emotion analysis
+
+Each balanced review receives one primary emotion from the language model and one from the NRC word-emotion lexicon. Both methods use `ANGER`, `ANTICIPATION`, `DISGUST`, `FEAR`, `JOY`, `SADNESS`, `SURPRISE`, and `TRUST`.
+
+All 150 reviews have complete LLM and NRC emotion assignments. The methods agreed on 26 reviews, for an agreement rate of 17.33%. This measures consistency between two methods, not emotion accuracy; NRC is a deterministic lexical baseline that does not model context, negation, or sarcasm.
+
+## Dashboard
+
+Open [`reports/sentiment_dashboard.html`](reports/sentiment_dashboard.html) in a browser. It contains headline metrics, rating and sentiment distributions, a three-class confusion matrix, per-class accuracy, neutral-error detail, NRC emotion results, and review-level records.
+
+![Balanced three-class sentiment dashboard overview](reports/figures/dashboard/dashboard-overview.png)
+
+![Dashboard review table and filtering controls](reports/figures/dashboard/dashboard-review-table.png)
+
+## Data source
+
+- Dataset: [Amazon Reviews 2023](https://amazon-reviews-2023.github.io)
+- Category file: [Gift Cards review data](https://mcauleylab.ucsd.edu/public_datasets/data/amazon_2023/raw/review_categories/Gift_Cards.jsonl.gz)
+- Citation: Hou et al. (2024), *Bridging Language and Items for Retrieval and Recommendation*, arXiv:2403.03952
+
+Raw data and reviewer-level outputs are excluded from version control. Credentials are never stored in project source or result files.
+
+## Project structure
 
 ```text
 amazon-gift-cards/
-  .gitignore                 # Secrets, environments, and bulk data excluded
-  .python-version            # Python version pin
-  requirements.txt           # Phase 1: no third-party dependencies
-  config/analysis.json        # Source, seed, disabled classification policy
-  src/gift_cards/ingest.py    # Streaming gzip JSONL profile function
-  scripts/prepare_data.py     # Download/local-file CLI and report persistence
-  tests/                     # Small synthetic fixtures, no external API calls
-  data/raw/                  # Original gzip + download provenance (ignored)
-  data/interim/              # Future cleaned/sampled data (ignored)
-  data/processed/            # Future predictions/scoring outputs (ignored)
-  notebooks/                 # Optional presentation/exploration, not core pipeline
-  reports/
-    sources.json             # Source ledger
-    manifest.json            # Dataset SHA-256, bytes, runtime, download metadata
-    profile.json             # Full schema, row counts, quality checks
-    rating_distribution.csv  # Counts and percent of all reviews
-    examples.json            # First five complete records (ignored)
-    verification.json        # Repeated-run and count checks
-    figures/                 # Future plots
+├── config/                  # Reproducible model and analysis settings
+├── prompts/                 # Versioned sentiment and emotion prompts
+├── scripts/                 # Data preparation, classification, and dashboard entry points
+├── src/gift_cards/          # Sampling, inference, scoring, and evaluation code
+├── tests/                   # Offline unit and integration tests
+├── data/
+│   ├── raw/                 # Original source data; excluded from Git
+│   └── processed/           # Samples and model results; excluded from Git
+├── reports/                 # Dashboard, screenshots, and analytical reports
+├── THREE_CLASS_METHOD.md
+└── EMOTION_METHOD.md
 ```
 
-## Reproduce (Windows, from this project folder)
+## Reproduce the local analysis
 
-Install Python 3.11.16 and uv, then run:
-
-```powershell
+```bash
 uv venv --python 3.11.16 .venv
-uv pip install --python .venv/Scripts/python.exe -r requirements.txt
+uv pip install --python .venv/Scripts/python.exe -r requirements-lock.txt
 .venv/Scripts/python.exe -m unittest discover -s tests -v
 .venv/Scripts/python.exe scripts/prepare_data.py
+.venv/Scripts/python.exe scripts/create_balanced_sample.py
 ```
 
-On POSIX, use `.venv/bin/python` instead. No activation is necessary when invoking the environment's Python explicitly. Do not recreate an environment while another process is using it.
+The sampling stage is deterministic. Hosted model outputs are preserved as the experiment record because fixed prompts and model settings do not guarantee identical future responses. Classification scripts require the approved Hermes-managed provider configuration and should not be rerun unless new model calls are intended.
 
-The script reuses an existing raw file; it only downloads when absent. New downloads use a temporary `.part` file and must successfully decompress and parse before being promoted. Invalid JSON raises an error with its line number; malformed data is not silently discarded. A full-file scan computes counts without loading a DataFrame into memory. Reports are overwritten on each run, so archive them before a deliberate source or code change.
+## Limitations
 
-To use a separately obtained gzip:
+- Star ratings are imperfect sentiment labels, especially for three-star reviews.
+- The balanced evaluation covers 150 eligible reviews and is not a substitute for validation on the full dataset.
+- Rating-leakage safeguards make the sample representative of eligible rating-blind reviews rather than every review.
+- NRC emotion scoring can miss context, negation, sarcasm, and mixed emotions.
+- Low cross-method agreement does not identify which method is correct; that would require human-labeled emotion ground truth.
 
-```powershell
-.venv/Scripts/python.exe scripts/prepare_data.py --input path/to/reviews.jsonl.gz --output reports/local-check
-```
-
-Local input has no claimed download URL in its manifest. Compare SHA-256 with the original manifest to confirm source identity. The saved SHA-256 fingerprints the bytes used; it is not an independently publisher-signed checksum.
-
-## Dependencies
-
-Phase 1 uses only Python's standard library: `gzip`, `json`, `collections`, `urllib.request`, `csv`, `hashlib`, `pathlib`, `datetime`, `argparse`, and `unittest`. No third-party package is needed; the requirements file intentionally contains documentation rather than unnecessary packages.
-
-For later phases, add and pin tested versions of:
-- `pandas`: analysis tables, joins, sampling, and exports.
-- `openai`: OpenAI-compatible API client, only after verifying compatibility with the Hermes-configured endpoint and authentication flow.
-- `scikit-learn`: evaluation metrics and split utilities.
-- `matplotlib` (optionally `seaborn`): publication-ready figures.
-- `pyarrow`: optional Parquet persistence if justified.
-
-Do not install heavyweight NLP frameworks or a model-serving stack for API-based classification unless a later requirement demands them.
-
-## Reproducibility and safeguards
-
-- Seed: **6418**, reserved in `config/analysis.json`. Phase 1 is deterministic and uses all records, so no random sampling occurs.
-- Examples are the **first five source records**, not a representative or random sample.
-- Raw data remains unchanged. Schema checks measure missing/null fields, types, invalid ratings, and blank text; they are not a complete duplicate/language/content audit.
-- Ratings are currently used only for descriptive analysis. Future prediction payloads must exclude `rating` and all unrelated metadata through a tested input allowlist.
-- Titles and text may themselves contain explicit ratings (e.g., 'Five Stars'). Define and test a rating-reference redaction/exclusion policy before any inference; merely dropping the rating column is insufficient.
-- Keep evaluation ratings separate from model inputs. Join predictions back by an internal record identifier only after prediction.
-- Classification is disabled. No model or generation settings are selected yet. Before enabling it, freeze the model identifier, prompts, label schema, generation limits, supported seed/temperature settings, and endpoint identity; record request/response metadata and cache outputs. Fixed settings reduce variation but do not guarantee bitwise deterministic hosted-model outputs.
-- Use the OpenAI-compatible endpoint configured for Hermes, not an assumed default endpoint. Runtime chat provider metadata alone does not establish a usable standalone API authentication method.
-- Credentials must stay in an approved runtime credential mechanism, never in source, notebooks, outputs, or Git. This phase does not inspect Hermes credential files.
-- `.gitignore` is defense-in-depth, not a credential scanner. Before eventual GitHub publication, inspect staged changes and file sizes. No Git repository was initialized and nothing was committed or pushed in this phase.
-
-## Interpretation and next stage
-
-Review text contains HTML artifacts; timestamps are represented in milliseconds in this file. Use an explicit UTC millisecond conversion in later cleaning. Blank bodies need an explicit title-only/exclusion policy. Star-rating imbalance means raw accuracy alone will be misleading; ratings are imperfect sentiment proxies and are not emotion ground truth.
-
-Next: define sentiment/emotion label rubrics and evaluation design, audit duplicates and language, specify cleaning and rating-leakage controls, then create a seeded pilot sample with a separate evaluation table. Do not classify until that design and the endpoint/model settings are agreed.
+See [`THREE_CLASS_METHOD.md`](THREE_CLASS_METHOD.md) and [`EMOTION_METHOD.md`](EMOTION_METHOD.md) for detailed methodology.

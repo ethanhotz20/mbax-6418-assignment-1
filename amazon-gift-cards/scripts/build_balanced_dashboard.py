@@ -176,30 +176,36 @@ def build_html(rows, llm_by_id=None):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Balanced Amazon Gift Cards Analysis</title>
 <style>
-:root {{ --ink:#18212b; --muted:#66717d; --line:#d8dee5; --surface:#f5f7f9; --accent:#315d83; --good:#176b45; --good-bg:#eaf6ef; --bad:#9b2c2c; --bad-bg:#fff0f0; }}
+:root {{ --ink:#17212b; --muted:#64717d; --line:#dbe2e8; --surface:#f5f7f9; --canvas:#f8fafb; --card:#ffffff; --accent:#315d83; --accent-soft:#eaf1f7; --good:#176b45; --good-bg:#eaf6ef; --bad:#9b2c2c; --bad-bg:#fff0f0; --shadow:0 8px 24px rgba(30, 48, 65, .07); }}
 * {{ box-sizing:border-box; }}
-body {{ margin:0; background:white; color:var(--ink); font:15px/1.5 Arial, Helvetica, sans-serif; }}
-main {{ width:min(1240px, calc(100% - 32px)); margin:32px auto 56px; }}
-h1 {{ margin:0 0 6px; font-size:28px; }} h2 {{ margin:30px 0 12px; font-size:20px; }}
-.subtitle {{ margin:0 0 22px; color:var(--muted); }}
-.metrics {{ display:grid; grid-template-columns:repeat(4, 1fr); border:1px solid var(--line); }}
-.metric {{ padding:18px; border-right:1px solid var(--line); }} .metric:last-child {{ border-right:0; }}
-.metric strong {{ display:block; font-size:26px; }} .metric span {{ color:var(--muted); }}
-.grid {{ display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:18px; align-items:start; }}
-.panel {{ border:1px solid var(--line); }} .panel h3 {{ margin:0; padding:12px 14px; background:var(--surface); font-size:16px; }}
-table {{ width:100%; border-collapse:collapse; }} th, td {{ padding:9px 11px; border:1px solid var(--line); text-align:left; vertical-align:top; }}
-th {{ background:var(--surface); font-size:13px; }} .panel table th, .panel table td {{ border-width:1px 0 0; }}
+body {{ margin:0; background:var(--canvas); color:var(--ink); font:15px/1.55 "Segoe UI", Arial, Helvetica, sans-serif; }}
+main {{ width:min(1240px, calc(100% - 40px)); margin:0 auto 64px; padding-top:34px; }}
+h1 {{ margin:0 0 5px; font-size:30px; line-height:1.2; letter-spacing:-.02em; }} h2 {{ margin:34px 0 12px; font-size:19px; letter-spacing:-.01em; }}
+.subtitle {{ margin:0 0 24px; color:var(--muted); }}
+.metrics {{ display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; }}
+.metric {{ padding:18px 20px; background:var(--card); border:1px solid var(--line); border-radius:8px; box-shadow:var(--shadow); }}
+.metric strong {{ display:block; margin-bottom:2px; font-size:27px; line-height:1.15; letter-spacing:-.02em; }} .metric span {{ color:var(--muted); font-size:13px; }}
+.grid {{ display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:20px; align-items:start; }}
+.panel {{ overflow:hidden; background:var(--card); border:1px solid var(--line); border-radius:8px; box-shadow:var(--shadow); }} .panel h3 {{ margin:0; padding:12px 14px; background:var(--surface); font-size:16px; }}
+table {{ width:100%; border-collapse:collapse; }} th, td {{ padding:10px 12px; border:1px solid var(--line); text-align:left; vertical-align:top; }}
+th {{ background:var(--surface); color:#44515d; font-size:12px; letter-spacing:.015em; }} .panel table th, .panel table td {{ border-width:1px 0 0; }}
+.panel tbody tr:hover, .reviews tbody tr:hover {{ background:#f7fafc; }}
 .matrix td, .matrix thead th {{ text-align:center; }} .matrix tbody td {{ font-size:18px; font-weight:700; }}
 .matrix td.largest-problem {{ color:var(--bad); background:var(--bad-bg); outline:2px solid var(--bad); outline-offset:-2px; }}
-.table-wrap {{ overflow-x:auto; }} .reviews {{ min-width:1260px; }} .reviews tr.incorrect {{ background:var(--bad-bg); }}
+.table-wrap {{ overflow-x:auto; border-radius:8px; }} .reviews {{ min-width:1260px; background:var(--card); }} .reviews tr.incorrect {{ background:var(--bad-bg); }}
+.reviews thead th {{ position:sticky; top:0; z-index:1; box-shadow:0 1px 0 var(--line); }}
 .filters {{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:12px; }}
-.filters button {{ padding:8px 12px; border:1px solid var(--line); border-radius:3px; background:white; color:var(--ink); cursor:pointer; }}
+.filters button {{ min-height:38px; padding:8px 13px; border:1px solid var(--line); border-radius:6px; background:var(--card); color:var(--ink); font:inherit; cursor:pointer; transition:background .15s ease, border-color .15s ease, color .15s ease; }}
+.filters button:hover {{ border-color:var(--accent); background:var(--accent-soft); }}
+.filters button:focus-visible {{ outline:3px solid rgba(49,93,131,.22); outline-offset:2px; }}
 .filters button[aria-pressed="true"] {{ background:var(--accent); border-color:var(--accent); color:white; }}
 .visible-count {{ margin-left:auto; color:var(--muted); }} .filtered-out {{ display:none; }}
-.result {{ display:inline-block; min-width:42px; padding:2px 8px; border-radius:3px; text-align:center; font-weight:700; }}
+.result {{ display:inline-block; min-width:42px; padding:2px 8px; border-radius:999px; text-align:center; font-size:12px; font-weight:700; }}
 .result.correct {{ color:var(--good); background:var(--good-bg); }} .result.incorrect {{ color:var(--bad); background:var(--bad-bg); }}
 .notice {{ margin:14px 0 0; padding:12px 14px; border:1px solid var(--line); background:var(--surface); color:var(--muted); }}
-@media (max-width:760px) {{ .metrics, .grid {{ grid-template-columns:1fr; }} .metric {{ border-right:0; border-bottom:1px solid var(--line); }} .metric:last-child {{ border-bottom:0; }} .visible-count {{ width:100%; margin-left:0; }} }}
+@media (max-width:900px) {{ .metrics {{ grid-template-columns:repeat(2, 1fr); }} }}
+@media (max-width:760px) {{ main {{ width:min(100% - 24px, 1240px); padding-top:24px; }} .grid {{ grid-template-columns:1fr; }} .visible-count {{ width:100%; margin-left:0; }} }}
+@media (max-width:480px) {{ .metrics {{ grid-template-columns:1fr; }} h1 {{ font-size:25px; }} }}
 </style>
 </head>
 <body>
