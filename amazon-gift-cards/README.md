@@ -46,11 +46,15 @@ The largest error is `NEUTRAL → NEGATIVE`, which occurred 34 times. Ratings ar
 
 Each balanced review receives one primary emotion from the language model and one from the NRC word-emotion lexicon. Both methods use `ANGER`, `ANTICIPATION`, `DISGUST`, `FEAR`, `JOY`, `SADNESS`, `SURPRISE`, and `TRUST`.
 
-All 150 reviews have complete LLM and NRC emotion assignments. The methods agreed on 26 reviews, for an agreement rate of 17.33%. This measures consistency between two methods, not emotion accuracy; NRC is a deterministic lexical baseline that does not model context, negation, or sarcasm.
+All 150 reviews have complete LLM and NRC emotion assignments. The methods agreed on 26 reviews, for an agreement rate of 17.33%. This measures consistency between two methods, not emotion accuracy. Their low agreement is consistent with their different designs: the LLM interprets the review in context, while NRC counts emotion-associated words and cannot directly model context, negation, or sarcasm.
+
+## Challenges and Issues Encountered
+
+LLM emotion processing was interrupted by an HTTP 429 usage-limit response. Rather than repeatedly retrying, the process stopped and preserved every completed prediction. After capacity became available, the resumable workflow continued from the next unfinished review instead of restarting the analysis, and all 150 balanced reviews ultimately received an LLM emotion prediction.
 
 ## Dashboard
 
-Open [`reports/sentiment_dashboard.html`](reports/sentiment_dashboard.html) in a browser. It contains headline metrics, rating and sentiment distributions, a three-class confusion matrix, per-class accuracy, neutral-error detail, NRC emotion results, and review-level records.
+Open [`reports/sentiment_dashboard.html`](reports/sentiment_dashboard.html) in a browser. It contains headline metrics, rating and sentiment distributions, a three-class confusion matrix, per-class accuracy, neutral-error detail, LLM and NRC emotion distributions, their agreement rate, and filterable review-level records.
 
 ![Balanced three-class sentiment dashboard overview](reports/figures/dashboard/dashboard-overview.png)
 
@@ -62,7 +66,7 @@ Open [`reports/sentiment_dashboard.html`](reports/sentiment_dashboard.html) in a
 - Category file: [Gift Cards review data](https://mcauleylab.ucsd.edu/public_datasets/data/amazon_2023/raw/review_categories/Gift_Cards.jsonl.gz)
 - Citation: Hou et al. (2024), *Bridging Language and Items for Retrieval and Recommendation*, arXiv:2403.03952
 
-Raw data and reviewer-level outputs are excluded from version control. Credentials are never stored in project source or result files.
+The raw Amazon dataset is excluded from version control. The repository includes only the final balanced 150-review result needed to support the published analysis; credentials are never stored in project source or result files.
 
 ## Project structure
 
@@ -75,7 +79,7 @@ amazon-gift-cards/
 ├── tests/                   # Offline unit and integration tests
 ├── data/
 │   ├── raw/                 # Original source data; excluded from Git
-│   └── processed/           # Samples and model results; excluded from Git
+│   └── processed/           # Final balanced result plus ignored intermediate outputs
 ├── reports/                 # Dashboard, screenshots, and analytical reports
 ├── THREE_CLASS_METHOD.md
 └── EMOTION_METHOD.md

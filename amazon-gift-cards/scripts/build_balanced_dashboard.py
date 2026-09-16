@@ -84,6 +84,16 @@ def build_html(rows, llm_by_id=None):
         for label in LABELS
     }
     nrc_emotions = counts(rows, "nrc_emotion", EMOTIONS)
+    llm_emotions = {
+        emotion: sum(llm_by_id.get(row["sample_id"]) == emotion for row in rows)
+        for emotion in EMOTIONS
+    }
+    emotion_agreements = sum(
+        llm_by_id.get(row["sample_id"]) == row["nrc_emotion"]
+        for row in rows
+    )
+    emotion_disagreements = total - emotion_agreements
+    emotion_agreement_rate = emotion_agreements / total
     largest_error = max(
         confusion[actual_label][predicted_label]
         for actual_label in LABELS for predicted_label in LABELS
@@ -111,6 +121,12 @@ def build_html(rows, llm_by_id=None):
             )
     for emotion in EMOTIONS:
         data.append(f'data-nrc-{emotion.lower()}="{nrc_emotions[emotion]}"')
+        data.append(f'data-llm-{emotion.lower()}="{llm_emotions[emotion]}"')
+    data.extend((
+        f'data-emotion-agreements="{emotion_agreements}"',
+        f'data-emotion-disagreements="{emotion_disagreements}"',
+        f'data-emotion-agreement-rate="{emotion_agreement_rate:.6f}"',
+    ))
     data.extend(
         f'data-neutral-predicted-{label.lower()}="{confusion["NEUTRAL"][label]}"'
         for label in LABELS
@@ -158,9 +174,14 @@ def build_html(rows, llm_by_id=None):
         f"<td>{class_accuracy[label]:.2%}</td></tr>"
         for label in LABELS
     )
-    emotion_rows = "".join(
+    nrc_emotion_rows = "".join(
         f"<tr><th>{emotion.title()}</th><td>{nrc_emotions[emotion]}</td>"
         f"<td>{nrc_emotions[emotion] / total:.2%}</td></tr>"
+        for emotion in EMOTIONS
+    )
+    llm_emotion_rows = "".join(
+        f"<tr><th>{emotion.title()}</th><td>{llm_emotions[emotion]}</td>"
+        f"<td>{llm_emotions[emotion] / total:.2%}</td></tr>"
         for emotion in EMOTIONS
     )
     neutral_outcomes = "".join(
@@ -195,11 +216,23 @@ th {{ background:var(--surface); color:#44515d; font-size:12px; letter-spacing:.
 .table-wrap {{ overflow-x:auto; border-radius:8px; }} .reviews {{ min-width:1260px; background:var(--card); }} .reviews tr.incorrect {{ background:var(--bad-bg); }}
 .reviews thead th {{ position:sticky; top:0; z-index:1; box-shadow:0 1px 0 var(--line); }}
 .filters {{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:12px; }}
-.filters button {{ min-height:38px; padding:8px 13px; border:1px solid var(--line); border-radius:6px; background:var(--card); color:var(--ink); font:inherit; cursor:pointer; transition:background .15s ease, border-color .15s ease, color .15s ease; }}
-.filters button:hover {{ border-color:var(--accent); background:var(--accent-soft); }}
-.filters button:focus-visible {{ outline:3px solid rgba(49,93,131,.22); outline-offset:2px; }}
-.filters button[aria-pressed="true"] {{ background:var(--accent); border-color:var(--accent); color:white; }}
-.visible-count {{ margin-left:auto; color:var(--muted); }} .filtered-out {{ display:none; }}
+.filter-choice {{ position:absolute; width:1px; height:1px; margin:-1px; overflow:hidden; clip:rect(0, 0, 0, 0); white-space:nowrap; }}
+.filters label {{ min-height:38px; padding:8px 13px; border:1px solid var(--line); border-radius:6px; background:var(--card); color:var(--ink); cursor:pointer; transition:background .15s ease, border-color .15s ease, color .15s ease; }}
+.filters label:hover {{ border-color:var(--accent); background:var(--accent-soft); }}
+#filter-all:focus-visible ~ .filters label[for="filter-all"],
+#filter-correct:focus-visible ~ .filters label[for="filter-correct"],
+#filter-incorrect:focus-visible ~ .filters label[for="filter-incorrect"] {{ outline:3px solid rgba(49,93,131,.22); outline-offset:2px; }}
+#filter-all:checked ~ .filters label[for="filter-all"],
+#filter-correct:checked ~ .filters label[for="filter-correct"],
+#filter-incorrect:checked ~ .filters label[for="filter-incorrect"] {{ background:var(--accent); border-color:var(--accent); color:white; }}
+.visible-count {{ margin-left:auto; color:var(--muted); }}
+.count-correct, .count-incorrect {{ display:none; }}
+#filter-correct:checked ~ .filters .count-all,
+#filter-incorrect:checked ~ .filters .count-all {{ display:none; }}
+#filter-correct:checked ~ .filters .count-correct,
+#filter-incorrect:checked ~ .filters .count-incorrect {{ display:inline; }}
+#filter-correct:checked ~ .table-wrap .review-row.incorrect {{ display:none; }}
+#filter-incorrect:checked ~ .table-wrap .review-row.correct {{ display:none; }}
 .result {{ display:inline-block; min-width:42px; padding:2px 8px; border-radius:999px; text-align:center; font-size:12px; font-weight:700; }}
 .result.correct {{ color:var(--good); background:var(--good-bg); }} .result.incorrect {{ color:var(--bad); background:var(--bad-bg); }}
 .notice {{ margin:14px 0 0; padding:12px 14px; border:1px solid var(--line); background:var(--surface); color:var(--muted); }}
@@ -211,7 +244,7 @@ th {{ background:var(--surface); color:#44515d; font-size:12px; letter-spacing:.
 <body>
 <main {' '.join(data)}>
   <h1>Balanced Amazon Gift Cards Analysis</h1>
-  <p class="subtitle">Balanced 150-review evaluation · three-class sentiment · complete NRC emotion analysis.</p>
+  <p class="subtitle">Balanced 150-review evaluation · three-class sentiment · complete LLM and NRC emotion analysis.</p>
   <section class="metrics" aria-label="Summary">
     <div class="metric"><strong>{total}</strong><span>Total reviews</span></div>
     <div class="metric"><strong>{accuracy:.2%}</strong><span>Overall accuracy</span></div>
@@ -231,37 +264,29 @@ th {{ background:var(--surface); color:#44515d; font-size:12px; letter-spacing:.
 
   <div class="grid">
     <section><h2>Actual NEUTRAL review outcomes</h2><div class="panel"><table><thead><tr><th>Outcome</th><th>Count</th><th>Share</th></tr></thead><tbody>{neutral_outcomes}</tbody></table></div></section>
-    <section><h2>NRC emotion distribution</h2><div class="panel"><table><thead><tr><th>Emotion</th><th>Count</th><th>Share</th></tr></thead><tbody>{emotion_rows}</tbody></table></div></section>
+    <section><h2>LLM vs NRC emotion agreement</h2><div class="panel"><table><thead><tr><th>Comparison</th><th>Count</th><th>Share</th></tr></thead><tbody><tr><th>Agreements</th><td>{emotion_agreements}</td><td>{emotion_agreement_rate:.2%}</td></tr><tr><th>Disagreements</th><td>{emotion_disagreements}</td><td>{emotion_disagreements / total:.2%}</td></tr></tbody></table></div></section>
+  </div>
+
+  <div class="grid">
+    <section><h2>NRC emotion distribution</h2><div class="panel"><table><thead><tr><th>Emotion</th><th>Count</th><th>Share</th></tr></thead><tbody>{nrc_emotion_rows}</tbody></table></div></section>
+    <section><h2>LLM emotion distribution</h2><div class="panel"><table><thead><tr><th>Emotion</th><th>Count</th><th>Share</th></tr></thead><tbody>{llm_emotion_rows}</tbody></table></div></section>
   </div>
 
   <h2>Review results</h2>
+  <input class="filter-choice" type="radio" name="review-filter" id="filter-all" checked>
+  <input class="filter-choice" type="radio" name="review-filter" id="filter-correct">
+  <input class="filter-choice" type="radio" name="review-filter" id="filter-incorrect">
   <div class="filters" aria-label="Filter reviews">
-    <button type="button" data-filter="all" aria-pressed="true">All Reviews</button>
-    <button type="button" data-filter="correct" aria-pressed="false">Correct Predictions</button>
-    <button type="button" data-filter="incorrect" aria-pressed="false">Incorrect Predictions</button>
-    <span class="visible-count" aria-live="polite">Visible rows: <strong id="visible-count">{total}</strong></span>
+    <label for="filter-all">All Reviews</label>
+    <label for="filter-correct">Correct Predictions</label>
+    <label for="filter-incorrect">Incorrect Predictions</label>
+    <span class="visible-count" aria-live="polite">Visible rows: <strong><span class="count-all">{total}</span><span class="count-correct">{correct}</span><span class="count-incorrect">{total - correct}</span></strong></span>
   </div>
   <div class="table-wrap"><table class="reviews">
     <thead><tr><th>#</th><th>Rating</th><th>Title</th><th>Review text</th><th>Actual sentiment</th><th>Predicted sentiment</th><th>Correct</th><th scope="col">NRC emotion</th><th scope="col">LLM emotion</th></tr></thead>
     <tbody>{''.join(review_rows)}</tbody>
   </table></div>
 </main>
-<script>
-const rows = Array.from(document.querySelectorAll('tr.review-row'));
-const buttons = document.querySelectorAll('[data-filter]');
-const visibleCount = document.getElementById('visible-count');
-buttons.forEach(button => button.addEventListener('click', () => {{
-  const filter = button.dataset.filter;
-  let visible = 0;
-  rows.forEach(row => {{
-    const show = filter === 'all' || row.classList.contains(filter);
-    row.classList.toggle('filtered-out', !show);
-    if (show) visible += 1;
-  }});
-  visibleCount.textContent = visible;
-  buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-}}));
-</script>
 </body>
 </html>
 '''

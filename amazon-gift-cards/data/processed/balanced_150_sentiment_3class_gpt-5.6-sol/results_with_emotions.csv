@@ -1,0 +1,151 @@
+sample_id,source_line,rating,title,text,actual_sentiment,predicted_sentiment,correct,llm_emotion,nrc_emotion,emotion_match
+1,109853,1.0,Card hacked,Buyer beware! These cards are already hacked upon purchasing. They’re just waiting for you to add money to the card and activate so someone somewhere in the world can make a fraudulent transaction. I received my card for Christmas btw.,NEGATIVE,NEGATIVE,True,FEAR,ANGER,False
+2,64163,1.0,Ugh,I keep trying to load my card but it won't show up,NEGATIVE,NEGATIVE,True,ANGER,TRUST,False
+3,17013,3.0,"My preferred software for income tax, but ....","Why the hell we only have an option with free state tax too.  Some of us live in states without income tax.  Also (sorry, grumpy old guy here) still a bit annoyed at Intuit for making us upgrade if we'd bought or sold a few stocks during the year.",NEUTRAL,NEGATIVE,False,ANGER,SADNESS,False
+4,11285,4.0,Gift,Gift,POSITIVE,NEUTRAL,False,JOY,ANTICIPATION,False
+5,113599,4.0,Oferta,Oferta,POSITIVE,NEUTRAL,False,JOY,TRUST,False
+6,135748,3.0,Why don’t you include the amount?!,I read reviews that the total wouldn’t be on the cards. I was fine with it. Until I learned I’d have to scratch every gift card code on the back to figure out the totals. Now they look used and have to give them to my kids teachers. Ridiculous. I’d imagine these are pretty loaded In the warehouse waiting to go out? Put the amount on the plastic bag they come in. It’s really not that complicated.,NEUTRAL,NEGATIVE,False,ANGER,ANTICIPATION,False
+7,65869,5.0,Quick and Simple. No Anxiety,How can a gift card not work? Always fits and opens doors for the recipient to stack them and make their own decision.,POSITIVE,POSITIVE,True,TRUST,ANTICIPATION,False
+8,109390,1.0,Damaged,This gift card came looking like it had lived in someone’s junk drawer for years. I was too embarrassed to give it to someone has a gift.,NEGATIVE,NEGATIVE,True,DISGUST,ANTICIPATION,False
+9,16286,3.0,Not Sure Why You'd Do This,"I only did this because of a deal that gave you extra money for refilling. Otherwise, I suggest keep your money in a more fluid form instead of locking it in to Amazon.",NEUTRAL,NEGATIVE,False,FEAR,TRUST,False
+10,44069,1.0,Worthless card!,Card declined when I tried to use it. Applebee's said the card was never activated.,NEGATIVE,NEGATIVE,True,ANGER,ANGER,True
+11,48501,1.0,Gift card ok; Personal Message - Disappointed!,If you give an option to add a personal message to the card...THEN PUT IT ON THERE!!!  I received my card with the gift card and the message was not in the card.  I had to go into my account to pull up what I wrote and handwrite it.,NEGATIVE,NEGATIVE,True,ANGER,TRUST,False
+12,51694,3.0,No,No,NEUTRAL,NEGATIVE,False,DISGUST,TRUST,False
+13,136833,1.0,Horrible,"I wish I could say this was great. But a Amazon denied the user and would not honor the gift card. Working with Amazon customer service is awful, just as you’d expect.",NEGATIVE,NEGATIVE,True,ANGER,ANGER,True
+14,22177,3.0,Alright,It's alright.,NEUTRAL,NEUTRAL,True,TRUST,TRUST,True
+15,86644,1.0,WORTHLESS OPTION,"I PURCHASED THIS CARD A FEW MONTHS AGO & WHEN I WENT TO USE IT LAST WEEK, IT WAS NO GOOD.  SO MUCH FOR BUYING AN AMAZON GIFT CARD.",NEGATIVE,NEGATIVE,True,ANGER,ANTICIPATION,False
+16,100147,3.0,Amazon.com Gift Card Balance Reload,I received you payment method from Marriott Rewards.,NEUTRAL,NEUTRAL,True,TRUST,ANTICIPATION,False
+17,138322,3.0,Free Gift message was not included,"Was disappointed when the gift cards arrived with no personalization oon them as promised when ordering!  Packing invoice even plainly listed each card and it's personalized message, but it was no where to be found on the cards.",NEUTRAL,NEGATIVE,False,SADNESS,JOY,False
+18,84990,3.0,Bonus not,I reloaded my gift card because I was suppose to get a bonus if I did.  Never happened.,NEUTRAL,NEGATIVE,False,SADNESS,ANTICIPATION,False
+19,116856,5.0,works,no issues,POSITIVE,POSITIVE,True,TRUST,TRUST,True
+20,90351,3.0,Attractive box and good gift for friends,It's always a good gift to thank friends. No other item is better than an Amazon gift card I believe. The gift box is attractive and good appearance.,NEUTRAL,POSITIVE,False,TRUST,ANTICIPATION,False
+21,110095,5.0,No wrapping necessary,Easy yo purchase and give,POSITIVE,POSITIVE,True,TRUST,TRUST,True
+22,1232,1.0,SMH,This program could use a lot of work,NEGATIVE,NEGATIVE,True,ANGER,TRUST,False
+23,134726,1.0,Don't buy and Credit your balance !,I Don't receive Reload Rewards :@,NEGATIVE,NEGATIVE,True,ANGER,TRUST,False
+24,85085,5.0,GIFT,Good value,POSITIVE,POSITIVE,True,TRUST,ANTICIPATION,False
+25,82531,3.0,"At least she got it.,",BIRTHDAY NOT EVEN A THANK YOU,NEUTRAL,NEGATIVE,False,ANGER,ANTICIPATION,False
+26,145523,1.0,"Card ""Hallo Baby"" instead of ""Hello Baby""","Very disappointed in card with incorrect spelling - need soon so no time to return.  Where's the quality control????  Maybe ""Hallo"" is correct in another language, but not for my needs.  Will tape the ribbon on the card over the misspelling, but not happy.",NEGATIVE,NEGATIVE,True,SADNESS,JOY,False
+27,106670,3.0,Missing Envelope,Sure would be nice if these came with an envelope. Had to  run out and  buy a separate cards with envelopes these would fit into. Not only was was it a waste of money but it negated the entire purpose of ordering this online to begin with.,NEUTRAL,NEGATIVE,False,ANGER,ANGER,True
+28,121315,5.0,easy to purchase,quick delivery and as advertised.,POSITIVE,POSITIVE,True,TRUST,ANTICIPATION,False
+29,88480,5.0,Good quality,The bedspreads was the exact color shown online.,POSITIVE,POSITIVE,True,TRUST,ANTICIPATION,False
+30,111805,5.0,Wanted and easy,This is cute and convenient.,POSITIVE,POSITIVE,True,JOY,TRUST,False
+31,133677,3.0,Card was buried in the box. Had to go looking for it.,"Nice box, but when opened, the card inside was hidden. Had to go looking for it.",NEUTRAL,NEGATIVE,False,SADNESS,FEAR,False
+32,66380,1.0,Buyer beware,Card had already been activated and used.,NEGATIVE,NEGATIVE,True,ANGER,ANTICIPATION,False
+33,140379,3.0,Tricky Checkout,I purchase this by accident.  Be careful when you order anything from Amazon.  Check out is a little tricky.,NEUTRAL,NEGATIVE,False,FEAR,FEAR,True
+34,235,1.0,Not happy,Not able you use all of my money,NEGATIVE,NEGATIVE,True,SADNESS,ANTICIPATION,False
+35,106180,3.0,Convenient but sticker leaves hard-to-remove residue,These are very useful but be aware that there is a sticker on the front of the card you remove before giving as a gift. This sticker leaves an ugly residue that makes the card look shop-worn. Amazon should use a different glue on this sticker.,NEUTRAL,NEGATIVE,False,ANGER,SADNESS,False
+36,36851,5.0,Great,The gift card is great.,POSITIVE,POSITIVE,True,JOY,ANTICIPATION,False
+37,123444,3.0,Great feature!,"Great feature, although it should allow to transfer between accounts.",NEUTRAL,POSITIVE,False,JOY,TRUST,False
+38,133513,2.0,"Poor packaging, flimsy gift card","I had a very hard time opening the box.  There was a little piece of wood that looks like it is supposed to be a guard to not open the box all the way, but the way it was placed made it impossible to open without being forceful, ruining the box.  Was the box assembled wrong or just a poor design?  Before I had to break the box, I tried to get the card out and it was so flimsy that it bent.  I'm glad I hadn't planned giving it as a gift.",NEGATIVE,NEGATIVE,True,ANGER,ANTICIPATION,False
+39,5284,1.0,download problems,not usable!!,NEGATIVE,NEGATIVE,True,ANGER,TRUST,False
+40,66682,3.0,Dented....,The tin was crushed on the bottom.  I was disappointed in this since it was a gift to someone.,NEUTRAL,NEGATIVE,False,SADNESS,SADNESS,True
+41,148148,5.0,No issues,Received the gift card right away and was able to use it without issue,POSITIVE,POSITIVE,True,TRUST,ANTICIPATION,False
+42,147164,3.0,The card was Not Activated,"The Card I purchased did not work. When I tried to redeem it on the epic games website, it said the card was not activated. Be careful when you order these, and I hope I find a way to fix this.",NEUTRAL,NEGATIVE,False,FEAR,ANTICIPATION,False
+43,104370,5.0,Thank you,If I die you can have it with Mr bill,POSITIVE,NEUTRAL,False,JOY,FEAR,False
+44,97281,1.0,SCAM...DO NOT BUY!!!,"DO NOT BUY THIS!!  The card was delivered but as soon as I activated it, a charge was made to it by another person. This is a scam!!",NEGATIVE,NEGATIVE,True,ANGER,TRUST,False
+45,82359,1.0,Tired of amazon,I have had nothing but negative issues with my account.,NEGATIVE,NEGATIVE,True,ANGER,SADNESS,False
+46,22548,5.0,It was a Birthday wish of my daugther-in-law.,"Well, who wouldn't like the gift card?",POSITIVE,POSITIVE,True,JOY,ANTICIPATION,False
+47,79803,5.0,good Deal,What can I say.  Great place to eat and good deal,POSITIVE,POSITIVE,True,JOY,ANTICIPATION,False
+48,107093,1.0,Got Something Totally Different,"I ordered this because I thought it was really cute but ended up with something different (not cute) from Amazon.  I'm sure they ran out and instead of giving me an option of choosing something else, they just sent me whatever they had on hand.  Was quite peeved at Amazon.  Kind of reminds me of Florists.",NEGATIVE,NEGATIVE,True,ANGER,ANTICIPATION,False
+49,126316,3.0,No note,Thought the gift card was a good idea. Problem was amazon forgot to send my note with the card recipient had no clue who it was from!,NEUTRAL,NEGATIVE,False,ANGER,ANTICIPATION,False
+50,4951,3.0,I attempted to do this to give birthday gifts to ...,"I attempted to do this to give birthday gifts to grandchildren, and gave up on the idea after all the many problems I had trying to accomplish this and then gave my son the numbers to use and told him to figure it out when he ordered something for them.",NEUTRAL,NEGATIVE,False,ANGER,JOY,False
+51,64663,4.0,Makes a great gift,Gift,POSITIVE,POSITIVE,True,JOY,ANTICIPATION,False
+52,112366,5.0,Easy to use and send,Iused this gift as a birthday present to a granddaughter.  She enjoyed it and was very thankful and appreciative.,POSITIVE,POSITIVE,True,JOY,JOY,True
+53,150889,1.0,Annoying but. Ok🙄,Takes forever for the order to process out of my account.,NEGATIVE,NEGATIVE,True,ANGER,ANGER,True
+54,105476,3.0,Tin was dented and hard to open,"Loved the idea of not having to get a separate gift box, but the tin arrived severely dented. It was so dented that the tin needed to be pried open to get to the gift card. Hoping this was just a fluke and not usual occurrence.",NEUTRAL,NEGATIVE,False,SADNESS,SURPRISE,False
+55,118342,3.0,Very good,He was soooo surprised receiving this,NEUTRAL,POSITIVE,False,SURPRISE,SURPRISE,True
+56,103787,3.0,Fun gift card for the family.,"Fun gift card. The kids loved this for the holidays and so did my husband. A little treat for them from our usual very healthy home diet, yet doesn't tempt me!  Perfect gift for everyone.",NEUTRAL,POSITIVE,False,JOY,ANTICIPATION,False
+57,150058,1.0,Does not work,"I have no idea why this has so many good reviews. I sent this to my friend as a gift, but she couldn't use it. Something about not being activated by the purchaser. I was not given any instructions for activating it. Amazon Customer Service gave me a refund, which is awesome of them, but it's still embarrassing to send a unusable gift card. Save yourself the trouble and just buy a card at a Chipotle location.",NEGATIVE,NEGATIVE,True,ANGER,JOY,False
+58,95844,3.0,Wrong,Wrong card,NEUTRAL,NEGATIVE,False,ANGER,TRUST,False
+59,76343,1.0,Got something else,Oh man I had a very bad experience with Amazon gift cards first time around. I bought a gift card to gift it to my friend on his special occasion. Ordered it and went to pick up from the drop box location on the day of the event and instead of the gift got something else was completely furious with that. Immediately called the customer care and they said they cannot do anything just accepted the return. Had to buy a gift card at the last minute from outside and pay a fee. It was really taxing and a headache. Next time around ordered again and got it correctly. Promised myself to order these things few days in advance if I have to do it via amazon,NEGATIVE,NEGATIVE,True,ANGER,ANTICIPATION,False
+60,139342,1.0,Poor Condition,"The gift card came quickly but was pretty beat up (wrinkled, scratches, indentations). I'm disappointed that I have to give this to someone else.",NEGATIVE,NEGATIVE,True,SADNESS,ANTICIPATION,False
+61,94635,3.0,Pay declined in an Amazon purchase with this card,Que pasa que no puedo comprar en Amazon con está tarjeta? Me declinó el pago.<br /><br />What happens I can't buy on Amazon with this card?  The payment of the purchase I made was declined.,NEUTRAL,NEGATIVE,False,ANGER,ANTICIPATION,False
+62,111812,1.0,Card arrived and pull tab was not intact., ,NEGATIVE,NEGATIVE,True,SADNESS,TRUST,False
+63,141323,1.0,ordered the card with the  dollars noted for purchased.  Empty dollar  card arrived.,"I ordered the card thinking the dollars I submitted would be operational at the price.  However, it was only a card that had be taken to Barnes and Noble to have it activated.  So did I lose my money that was supposed to have on it?",NEGATIVE,NEGATIVE,True,FEAR,ANGER,False
+64,142318,1.0,No comment,No comment,NEGATIVE,NEUTRAL,False,TRUST,TRUST,True
+65,104346,5.0,Gift card,Excelente,POSITIVE,POSITIVE,True,JOY,ANTICIPATION,False
+66,145917,1.0,This new system to reload you balance is horrible!!!,"This system isn't necessarily bad but it takes too long to reload your balance, even with a prepaid gift card.<br />The old system was way better! Please go back to the old system!!!",NEGATIVE,NEGATIVE,True,ANGER,TRUST,False
+67,110338,1.0,Perdida de paquete,Mi paquete está entregado y no lo recibi. Que hago??,NEGATIVE,NEGATIVE,True,FEAR,TRUST,False
+68,84311,3.0,Will do,It will help to protect the glass of my cell phone.  It did not fit completely (from edge to edge of screen).  It was a little small for my phone but it was better than nothing.  Great price.,NEUTRAL,POSITIVE,False,TRUST,TRUST,True
+69,45302,5.0,Convenient to have,Easy to load,POSITIVE,POSITIVE,True,TRUST,TRUST,True
+70,137007,1.0,terrible redesign,Everything about this redesign has made the reload process and functionality worse. Please revert to the old system.,NEGATIVE,NEGATIVE,True,ANGER,FEAR,False
+71,62293,5.0,killing lincoln,Our kids gave my husband a Kindle for Christmas. He also was given a gift card and has used it for the books he loves to read. He has ordered them so easily.  It is a great way for him to get his books now. Thank you Amazon,POSITIVE,POSITIVE,True,JOY,ANGER,False
+72,151086,4.0,"Note wasn’t included, but great box/card!","Love the box/card but when it got delivered they didn’t know who it was from because my note wasn’t included. 😢 I was bummed because the person never contacted me to let me know they got it, I had to ask them.",POSITIVE,NEGATIVE,False,SADNESS,JOY,False
+73,105144,3.0,box open,box was opened and thought product was missing. Package was huge with a small piece of cardboard with the gift card inside that on the bottom of box.,NEUTRAL,NEGATIVE,False,FEAR,ANTICIPATION,False
+74,93337,3.0,It can be used for almost anything!,It’s a gift card: nothing unusual either way!,NEUTRAL,NEUTRAL,True,TRUST,ANTICIPATION,False
+75,5975,5.0,great box,works well & looks great,POSITIVE,POSITIVE,True,JOY,TRUST,False
+76,91195,1.0,Promotional credit,The promotional credit for this item was not added to my account as promised.,NEGATIVE,NEGATIVE,True,ANGER,TRUST,False
+77,51143,3.0,Ok,Ok,NEUTRAL,NEUTRAL,True,TRUST,TRUST,True
+78,122515,1.0,Frustrating and unintuitive,I found this new system difficult to use and unintuitive. I charged my regular card instead of the visa gift card I intend to use. Customer support has been unhelpful in the process of resolving this. The service SUCKS.,NEGATIVE,NEGATIVE,True,ANGER,TRUST,False
+79,61254,5.0,Arrived on time! and fits in my wallet. ...,"Arrived on time! and fits in my wallet.  now that I applied it to my account, I can use it as a bookmark too.",POSITIVE,POSITIVE,True,JOY,ANGER,False
+80,30721,1.0,WEBSITE WILL NOT ACCEPT CUSTOM GIFT CARD AMOUNTS,Frustrating lack of variable amount on gift cards.,NEGATIVE,NEGATIVE,True,ANGER,SURPRISE,False
+81,122753,5.0,Easy to reload my gift card.,The process directions were very clear and easy to follow.,POSITIVE,POSITIVE,True,TRUST,ANTICIPATION,False
+82,89478,1.0,Gift card,Doesn't show amount,NEGATIVE,NEGATIVE,True,ANGER,ANTICIPATION,False
+83,957,3.0,Cute package,Obviously I got this for a graduation. It was a cute box but it did not give anywhere to write the amount of the gift card on either the card or the box. It would have been nice if there had been somewhere to also list who the gift was from so that I didn't have to put it in a gift bad. That kind of defeated the purpose of buying the cute box. I would not purchase this again as it did not turn out to be worth it.,NEUTRAL,NEGATIVE,False,SADNESS,JOY,False
+84,37189,5.0,Great presentation,My daughter bought this as a Christmas gift for her dad.  We love that it came in a nice box.  It made the gift card feel more like a gift!,POSITIVE,POSITIVE,True,JOY,JOY,True
+85,135276,3.0,Nice wrapping.,"What can I say, its a gift card.  Nice wrapping.",NEUTRAL,POSITIVE,False,TRUST,ANTICIPATION,False
+86,16761,5.0,Good,Good,POSITIVE,POSITIVE,True,TRUST,ANTICIPATION,False
+87,100480,3.0,Cute gift card but my gift recipient wasn’t given my name,I sent this gift card as a birthday gift to my niece. She received it and did not know who it was from since the gift message we wrote was never included in the package. My brother had to call around to see who sent it. He did say that the actual gift card was cute.,NEUTRAL,NEGATIVE,False,SADNESS,ANTICIPATION,False
+88,47583,5.0,Nice Gift,My hair dresser really enjoyed the Amazon gift card.  He really likes choosing a gift for himself.,POSITIVE,POSITIVE,True,JOY,ANTICIPATION,False
+89,121461,3.0,Arrived bent & warped,The card arrived bent and warped.  Label on cards say that they have no value until activated by cashier.  I can't tell if they were activated and I was planning to give them as a gift tomorrow.,NEUTRAL,NEGATIVE,False,FEAR,ANTICIPATION,False
+90,21763,3.0,Good,Good,NEUTRAL,POSITIVE,False,TRUST,ANTICIPATION,False
+91,85711,1.0,Legal Seafoods is a dumpster. Seriously. This is ...,Legal Seafoods is a dumpster.  Seriously.  This is a glorified Red Lobster.  Don't buy their gift cards or their food.  You will end up well acquainted with a toilet.,NEGATIVE,NEGATIVE,True,DISGUST,TRUST,False
+92,17967,5.0,Hey friends need Alexa too,Just the right size,POSITIVE,POSITIVE,True,TRUST,TRUST,True
+93,7620,5.0,Good packaging,Cute gift box,POSITIVE,POSITIVE,True,JOY,ANTICIPATION,False
+94,119454,5.0,Reliable Gift for Anyone,"The amazon gift card is a great, last minute gift...",POSITIVE,POSITIVE,True,TRUST,ANTICIPATION,False
+95,13573,3.0,Hey! it's a gift card,Hey! it's a gift card,NEUTRAL,NEUTRAL,True,TRUST,ANTICIPATION,False
+96,119918,5.0,It arrived on time,Enjoyed the gift,POSITIVE,POSITIVE,True,JOY,ANTICIPATION,False
+97,109083,1.0,The person who received this gift card is not able to claim it.,The person who received this gift card is not able to claim it.,NEGATIVE,NEGATIVE,True,SADNESS,ANTICIPATION,False
+98,138743,5.0,I loved it!,Very helpful! I loved it!,POSITIVE,POSITIVE,True,JOY,JOY,True
+99,91314,3.0,Practicidad y Detalle,Llego muy rapido y luce muy agradable,NEUTRAL,POSITIVE,False,JOY,TRUST,False
+100,141301,1.0,not happy,no it did not..... i could not use the gift card amount for stuff i wanted to order to be delivered in RSA which was eligible for delivery in RSA. It did not want to take the gift card as a method of payment.,NEGATIVE,NEGATIVE,True,ANGER,ANTICIPATION,False
+101,107218,5.0,Quality Product,The tin that the gift card came in was so cute and the quality was great.  Could be kept and used as a Christmas ornament.  Very happy!,POSITIVE,POSITIVE,True,JOY,ANTICIPATION,False
+102,79404,3.0,So confusing,So confusing and sometimes don’t reload and have to verify card don’t like the new reload account,NEUTRAL,NEGATIVE,False,ANGER,TRUST,False
+103,129634,3.0,NICE PRESENTATION,"It made a nice presentation at Christmas for not very much money. As a bonus, it did not have to be wrapped.",NEUTRAL,POSITIVE,False,JOY,ANTICIPATION,False
+104,126875,5.0,BBW=Awesome,How can you go wrong here?!,POSITIVE,POSITIVE,True,JOY,TRUST,False
+105,138460,5.0,I love it!,Perfect Christmas gift my kids will love it! Santa will win favorite of the year award :) definitely a good choice,POSITIVE,POSITIVE,True,JOY,JOY,True
+106,141464,3.0,Gift card undelivabe,"I wanted my gift card to go family in Italy, but I was not able to have it shipped there for some reason was on your undelivable site.<br />Very disappointed",NEUTRAL,NEGATIVE,False,SADNESS,ANTICIPATION,False
+107,80324,3.0,Gift,The gift box was crushed,NEUTRAL,NEGATIVE,False,SADNESS,ANTICIPATION,False
+108,93076,2.0,extremely poor packaging,"I would not buy this box for the giftcard again. When I opened the box by pulling out the little drawer, it was empty. There was no gift card sitting in the proper spot for it. It took us physically pulling apart the box to find that the gift card had slipped out of its spot and gotten lodged underneath the drawer. Extremely poor design",NEGATIVE,NEGATIVE,True,ANGER,ANTICIPATION,False
+109,24176,1.0,this is a mistake,Dislike,NEGATIVE,NEGATIVE,True,DISGUST,ANGER,False
+110,110533,1.0,SCAM!!!  BUYER BEWARE!!!,"This gift card doesn't work.  Amazon tells you to call VISA, and VISA tells you to call Amazon.  Still waiting to hear back from Amazon's fraud department.",NEGATIVE,NEGATIVE,True,ANGER,ANTICIPATION,False
+111,121030,3.0,Choice,Amazon’s delivered hands on gift card is an excellent gift.  I just did not get the  box choice I selected.,NEUTRAL,POSITIVE,False,SADNESS,JOY,False
+112,107140,3.0,No message,"I was disappointed , I had selected a gift message to put with my Brandon's birthday gift card. Unfortunately it was not included so he had no idea who it was from.. I've tried twice to send gifts with message and the recipients do not get message.  I am not thrilled  with this service.",NEUTRAL,NEGATIVE,False,SADNESS,ANTICIPATION,False
+113,21277,5.0,Perfect graduation gift,Love that it’s ready to be gift ready  !!,POSITIVE,POSITIVE,True,JOY,ANTICIPATION,False
+114,83070,5.0,No Issues,"Gave as a gift, without any problems.",POSITIVE,POSITIVE,True,TRUST,ANTICIPATION,False
+115,13271,5.0,Good gift for friends,They loved it,POSITIVE,POSITIVE,True,JOY,ANTICIPATION,False
+116,30759,1.0,Not activated,The card came and wasn’t even activated.  Amazon would not even recognize the code,NEGATIVE,NEGATIVE,True,ANGER,TRUST,False
+117,94492,3.0,They hold my money for several days,They hold my money for several days for using it at gas station. I had a bad experience,NEUTRAL,NEGATIVE,False,ANGER,ANGER,True
+118,78516,5.0,The kids all loved it (and the gift card inside),This sliding gift card case is so cute! The kids all loved it (and the gift card inside).,POSITIVE,POSITIVE,True,JOY,ANTICIPATION,False
+119,115236,1.0,"this process is super slow, the old way was much better",it takes so long to load these pages. this is not an improvement vs the old reload method.,NEGATIVE,NEGATIVE,True,ANGER,ANTICIPATION,False
+120,141253,3.0,How to use and redeem,"I do not understand how this works, confusing to me.",NEUTRAL,NEGATIVE,False,ANGER,TRUST,False
+121,48176,5.0,"Facil de comprar, facil de usar.",Me parece ideal las tarjetas de regalo cuando alguien se casa porque el agasajado puede invertirla en lo que mas le guste. Es facil de comprar y facil de usar.,POSITIVE,POSITIVE,True,TRUST,TRUST,True
+122,131508,2.0,The gift box was crushed and I had to put the card in another container.,Loved the gift card. Gift box was damaged and I threw it away.,NEGATIVE,NEGATIVE,True,SADNESS,ANTICIPATION,False
+123,122056,1.0,No lo he podido enviar al destinatario y es para regalar,No lo pude enviar a la persona para la que lo adquirí,NEGATIVE,NEGATIVE,True,SADNESS,TRUST,False
+124,135489,3.0,Can't buy Prime!,Disappointed that you can't buy Prime with a gift card. Punk move Amazon.,NEUTRAL,NEGATIVE,False,ANGER,ANGER,True
+125,78806,5.0,everyone loves the amazon gift card,who couldn't use an Amazon gift card! I'm thinking about giving these as gifts for everyone on my Christmas list this year.,POSITIVE,POSITIVE,True,ANTICIPATION,ANTICIPATION,True
+126,126594,3.0,... come with a tassel on the graduation cap box like in the picture,Little confused why it didnt come with a tassel on the graduation cap box like in the picture. Looks a lil dumb without it. Other than that gift card is fine.,NEUTRAL,NEGATIVE,False,SADNESS,ANTICIPATION,False
+127,150325,1.0,The gift card really sucks,"Horrible gift card, do not buy.  Amazingly difficult to redeem.  They don't tell you but you have to contact GoPlayGolf directly (I did it through the chat function on their webpage) and have them activate the card before it can be used.  It took me hours of digging and trying before I figured that out.",NEGATIVE,NEGATIVE,True,ANGER,JOY,False
+128,108990,5.0,cute,They are great cards,POSITIVE,POSITIVE,True,JOY,TRUST,False
+129,94868,3.0,Was not able to use in stores,Was not able to use in a stores can only do online purchases with it. It did arrive on time and it was fully loaded. For some reasons when tried to use it a store it came up with  error saying unreadable card. Purchase as a birthday gift cards.,NEUTRAL,NEGATIVE,False,SADNESS,ANTICIPATION,False
+130,67300,1.0,Unhappy,Empty card no balance on card,NEGATIVE,NEGATIVE,True,SADNESS,ANGER,False
+131,53624,5.0,I love it,Buy stuffs,POSITIVE,POSITIVE,True,JOY,JOY,True
+132,11915,5.0,Great gift,Great gift,POSITIVE,POSITIVE,True,JOY,ANTICIPATION,False
+133,151883,1.0,Missing balance reward,Reward was not added to balance.,NEGATIVE,NEGATIVE,True,ANGER,ANTICIPATION,False
+134,13530,1.0,"Generic, glue doesn't come off",These cards are very generic looking and hard to remove glue. These were supposed to go in seperate envelopes for teachers. They look counterfeit and not gift worthy.,NEGATIVE,NEGATIVE,True,DISGUST,ANGER,False
+135,135324,1.0,FAKE GIFT CARDS!!!!!!!!,RIP OFF!!!! SCAM CARDS,NEGATIVE,NEGATIVE,True,ANGER,ANTICIPATION,False
+136,7593,5.0,Great gift.,Great gift .,POSITIVE,POSITIVE,True,JOY,ANTICIPATION,False
+137,34389,5.0,Perfect!,Perfect! Easy  to order and arrived in a timely manner. Would order again.,POSITIVE,POSITIVE,True,JOY,ANTICIPATION,False
+138,43346,5.0,Great gift! Highly recommend,Great gift ! Highly recommend !,POSITIVE,POSITIVE,True,JOY,ANTICIPATION,False
+139,6665,5.0,Gift cards work.,No idea why this item requires a review.  This is what I do with prepaid visa cards that I sometimes get.  I turn them immediately into amazon credit that doesn't go away or have strange fees or something.  It's a good use.,POSITIVE,POSITIVE,True,TRUST,ANTICIPATION,False
+140,25528,5.0,Great baby shower gift.,Very easy way to send gift to a baby shower. The recipient was very pleased with it and so was I. Now she can shop for what she might not receive.,POSITIVE,POSITIVE,True,JOY,JOY,True
+141,124022,3.0,Perdi unos dolares en un reclamo,Tuve que pedir devolución de una compra y no me reintegraron valor completo,NEUTRAL,NEGATIVE,False,SADNESS,TRUST,False
+142,83489,1.0,So much more time consuming to use now,"It wasn't broke..why was this changed? Please go back to the previous way of reloading balances, it was so much easier.",NEGATIVE,NEGATIVE,True,ANGER,ANTICIPATION,False
+143,20912,1.0,Dissapointed,The gift card was delivered according to your tracking but was not received..it was sent to an apartment number and obviously was stolen<br />Obviously this is a problem and I should have been made aware of this<br />possibility.  I will be sure not to send a gift card again.,NEGATIVE,NEGATIVE,True,SADNESS,ANTICIPATION,False
+144,128106,1.0,Card does not work,I've tried to use the card online and it didn't work. I tried to check the balance and the card says it's invalid. What can you do to fix the card?,NEGATIVE,NEGATIVE,True,ANGER,SADNESS,False
+145,122892,3.0,Tener cuidado con varias recargas de gran valor,"Tuve problemas para hacer recargas de valor alto, ya que ven como actitud sospechosa hacer varias y tuve que hacer varias de poco valor",NEUTRAL,NEGATIVE,False,ANGER,TRUST,False
+146,92325,1.0,No discount,I bought  because it was supposed to give me a discount had I know it wasn't going to I would've just paid with my debit card.,NEGATIVE,NEGATIVE,True,SADNESS,TRUST,False
+147,141554,3.0,A mess,This item was wrogly labelled and without a gift bag and message,NEUTRAL,NEGATIVE,False,ANGER,ANTICIPATION,False
+148,71024,5.0,Perfect gift for new great,Amazon gift cards are perfect for so many occasions. I purchased this for a nephew’s wedding and the newlyweds were delighted. They need lots of things to set up their new household and Amazon has it all.,POSITIVE,POSITIVE,True,JOY,ANTICIPATION,False
+149,57682,5.0,Good,Giftable goodness,POSITIVE,POSITIVE,True,JOY,ANTICIPATION,False
+150,136078,3.0,don’t reload huge amounts,it’s okay,NEUTRAL,NEUTRAL,True,TRUST,TRUST,True
