@@ -54,11 +54,11 @@ LLM emotion processing was interrupted by an HTTP 429 usage-limit response. Rath
 
 ## Dashboard
 
-Open [`reports/sentiment_dashboard.html`](reports/sentiment_dashboard.html) in a browser. It contains headline metrics, rating and sentiment distributions, a three-class confusion matrix, per-class accuracy, neutral-error detail, LLM and NRC emotion distributions, their agreement rate, and filterable review-level records.
+Open [`amazon-gift-cards/reports/sentiment_dashboard.html`](amazon-gift-cards/reports/sentiment_dashboard.html) in a browser. It contains headline metrics, rating and sentiment distributions, a three-class confusion matrix, per-class accuracy, neutral-error detail, LLM and NRC emotion distributions, their agreement rate, and filterable review-level records.
 
-![Balanced three-class sentiment dashboard overview](reports/figures/dashboard/dashboard-overview.png)
+![Balanced three-class sentiment dashboard overview](amazon-gift-cards/reports/figures/dashboard/dashboard-overview.png)
 
-![Dashboard review table and filtering controls](reports/figures/dashboard/dashboard-review-table.png)
+![Dashboard review table and filtering controls](amazon-gift-cards/reports/figures/dashboard/dashboard-review-table.png)
 
 ## Data source
 
@@ -88,6 +88,7 @@ amazon-gift-cards/
 ## Reproduce the local analysis
 
 ```bash
+cd amazon-gift-cards
 uv venv --python 3.11.16 .venv
 uv pip install --python .venv/Scripts/python.exe -r requirements-lock.txt
 .venv/Scripts/python.exe -m unittest discover -s tests -v
@@ -105,4 +106,4 @@ The sampling stage is deterministic. Hosted model outputs are preserved as the e
 - NRC emotion scoring can miss context, negation, sarcasm, and mixed emotions.
 - Low cross-method agreement does not identify which method is correct; that would require human-labeled emotion ground truth.
 
-See [`THREE_CLASS_METHOD.md`](THREE_CLASS_METHOD.md) and [`EMOTION_METHOD.md`](EMOTION_METHOD.md) for detailed methodology.
+See [`THREE_CLASS_METHOD.md`](amazon-gift-cards/THREE_CLASS_METHOD.md) and [`EMOTION_METHOD.md`](amazon-gift-cards/EMOTION_METHOD.md) for detailed methodology.
